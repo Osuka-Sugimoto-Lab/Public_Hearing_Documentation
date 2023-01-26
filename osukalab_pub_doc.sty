@@ -20,19 +20,16 @@
 
 %%%%%%タイトル周りの定義,どうやらここはdefで書くらしい？
 \def\title#1{\gdef\@title{#1}}
-\def\engtitle#1{\gdef\@engtitle{#1}}
-\def\author#1{\gdef\@author{#1}}
-\def\engauthor#1{\gdef\@engauthor{#1}}
-\def\keywords#1{\gdef\@keywords{#1}}
 \def\headding#1{\gdef\@headding{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\department#1{\gdef\@department{#1}}
 
 
 %%%%%%%%%タイトル周りのレイアウト調整，狭くしています
 \def\@maketitle{\newpage%
- \null%
+% \null%
  \@headding
-\hspace*{\fill}
-\@date
+\hspace*{\fill} \@date
 \vskip 1em
   \begin{center}
     {\LARGE \textbf{ \@title }\par } %
@@ -42,7 +39,8 @@
 %    \vskip 1em
 %    {\large \@engauthor}
   \end{center}
-  \hspace*{\fill}  {\large 機械工学専攻　大須賀・杉本研究室　　\@author } \hspace*{5mm}%
+  \hspace*{\fill}  {\large \@department　大須賀・杉本研究室　\@author } \hspace*{5mm}%
+  \vskip 1em
   }%
 %   \@ifundefined{@abstract}{}{%
 %     \small%
