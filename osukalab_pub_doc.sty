@@ -4,6 +4,7 @@
 %			reftabのTable.→Tableに変更
 %   Version 1.02  2020/06/24  18:06:23  NANIWA keisuke
 %      \bfという古い記述を\textbf{}に変更
+%      captionパッケージ使うなって言われるけど，代替品がわからないので保留->readmeに追記
 %
 \typeout{*** Document Style 'Osuka-Sugimoto lab. for pLaTeX2e' (2018/01/10) ***}
 
@@ -28,42 +29,41 @@
 
 %%%%%%%%%タイトル周りのレイアウト調整，狭くしています
 \def\@maketitle{\newpage%
-%  \null%
-%  \@date
+ \null%
+ \@headding
 \hspace*{\fill}
-\begin{tabular}[b]{r}
-  \@headding \\
-  \@date
-\end{tabular}
+\@date
+\vskip 1em
   \begin{center}
     {\LARGE \textbf{ \@title }\par } %
     \vskip 1em %
-    {\large \@author }%
 %    \vskip 1em
 %    {\large \textbf{ \@engtitle }}
 %    \vskip 1em
 %    {\large \@engauthor}
-  \end{center}%
-  \@ifundefined{@abstract}{}{%
-    \small%
-    \begin{center}
-      \begin{minipage}{.9\textwidth}%
-   \vspace*{2.0mm} % added for pLaTeX
-      {\textbf{Abstract---}}\@abstract%
-      \end{minipage}%
-    \end{center}%
-    \gdef\@abstract{}}%
-   \vspace*{0.0mm} % added for pLaTeX
-  \@ifundefined{@keywords}{}{%
-    \small%
-    \begin{center}
-      \begin{minipage}{.9\textwidth}%
-      \textbf{ Key Words: }\@keywords%
-      \end{minipage}
-    \end{center}
-    \gdef\@keywords{}}%
-   \vspace*{5.0mm} % added for pLaTeX
-    \vskip 1zh}%
+  \end{center}
+  \hspace*{\fill}  {\large 機械工学専攻　大須賀・杉本研究室　　\@author } \hspace*{5mm}%
+  }%
+%   \@ifundefined{@abstract}{}{%
+%     \small%
+%     \begin{center}
+%       \begin{minipage}{.9\textwidth}%
+%    \vspace*{2.0mm} % added for pLaTeX
+%       {\textbf{Abstract---}}\@abstract%
+%       \end{minipage}%
+%     \end{center}%
+%     \gdef\@abstract{}}%
+%    \vspace*{0.0mm} % added for pLaTeX
+%   \@ifundefined{@keywords}{}{%
+%     \small%
+%     \begin{center}
+%       \begin{minipage}{.9\textwidth}%
+%       \textbf{ Key Words: }\@keywords%
+%       \end{minipage}
+%     \end{center}
+%     \gdef\@keywords{}}%
+%    \vspace*{5.0mm} % added for pLaTeX
+%     \vskip 1zh}%
 \long\def\abstract#1{\long\gdef\@abstract{#1}}%
 
 %%%%%%%章節のスタイル調整
@@ -112,8 +112,11 @@
 
 
 %%%%%caption系の設定
-\usepackage{subcaption}
-\usepackage{caption}%基本命令なので入れておく
+\usepackage{caption}
+
+%\usepackage{subcaption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
 \captionsetup{format=hang,font=bf,width=\columnwidth}
 \captionsetup[table]{position=top}
 \captionsetup[subtable]{textfont=sf}
