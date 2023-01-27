@@ -23,6 +23,7 @@
 \def\headding#1{\gdef\@headding{#1}}
 \def\author#1{\gdef\@author{#1}}
 \def\department#1{\gdef\@department{#1}}
+\def\laboratory#1{\gdef\@laboratory{#1}}
 
 
 %%%%%%%%%タイトル周りのレイアウト調整，狭くしています
@@ -39,7 +40,7 @@
 %    \vskip 1em
 %    {\large \@engauthor}
   \end{center}
-  \hspace*{\fill}  {\large \@department　大須賀・杉本研究室　\@author } \hspace*{5mm}%
+  \hspace*{\fill}  {\large \@department　\@laboratory　\@author } \hspace*{5mm}%
   \vskip 1em
   }%
 %   \@ifundefined{@abstract}{}{%
@@ -47,7 +48,7 @@
 %     \begin{center}
 %       \begin{minipage}{.9\textwidth}%
 %    \vspace*{2.0mm} % added for pLaTeX
-%       {\textbf{Abstract---}}\@abstract%
+%       {\textbf{Abstract-}}\@abstract%
 %       \end{minipage}%
 %     \end{center}%
 %     \gdef\@abstract{}}%
