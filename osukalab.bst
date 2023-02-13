@@ -323,7 +323,7 @@ FUNCTION {format.date}
      { "there's no year in " cite$ * warning$
        ""
      }
-     { " (" year * ")" * }
+     { " (" year * ")" }
   if$
 }
 FUNCTION {format.btitle}
@@ -459,10 +459,6 @@ FUNCTION {format.vol.num.pages}
       if$
     }
   if$
-  year empty$
-     {""}
-     {" (" * year * ")  " *}
-  if$
   pages empty$
     'skip$
     { duplicate$ empty$
@@ -470,6 +466,10 @@ FUNCTION {format.vol.num.pages}
 	{ number empty$
  	    { format.pages * }
  	    { ", " * format.pages * }
+    if$
+    year empty$
+       {""}
+       {", (" * year * ")  " *}  
 	  if$
 	}
       if$
