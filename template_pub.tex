@@ -1,7 +1,7 @@
 \RequirePackage{plautopatch}
 \RequirePackage[l2tabu, orthodox]{nag}
 
-\documentclass[uplatex,dvipdfmx]{jsarticle}
+\documentclass[uplatex,dvipdfmx]{jlreq}
 \usepackage{osukalab_pub_doc}
 \usepackage{epic,eepic}
 \usepackage{graphicx}
@@ -10,24 +10,17 @@
 \usepackage{siunitx}
 \usepackage{txfonts}
 \usepackage{amssymb}
+\usepackage{cite}
 
 \pagestyle{empty}
 
-%\headding{修士論文発表会}%修論の場合はこっち
-%\headding{卒業論文発表会}%卒論の場合はこっち
-\headding{合同研究会資料}%合同研究会の場合はこっち
+\headding{修士論文要旨}%修論の場合はこっち
+%\headding{卒業論文要旨}%卒論の場合はこっち
 
-
+\date{2025年2月7日} %日付確認
 \title{論文公聴会資料（タイトルと差し替える）} 
 
-%\department{機械工学専攻}%修論はこっち
-\department{機械工学科}%卒論はこっち 
-
-\laboratory{浪花研究室}
-
-\author{北科大　太郎}
-
-\date{2025年2月21日}%日付確認のこと
+\author{機械工学専攻　大須賀・杉本・石原研究室　氏名}
 
 \begin{document}
 
@@ -35,6 +28,13 @@
 \thispagestyle{empty}
 \section{緒言}
 ここに本文を書く．
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{./figure/testfig.pdf}
+    \caption{Test figure. 象の鼻は長いぞう象の鼻は長いぞう象の鼻は長いぞう象の鼻は長いぞう}
+    \label{fig:test}
+\end{figure}
 
 
 \subsection{節}
