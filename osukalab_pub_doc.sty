@@ -124,14 +124,12 @@
 %\usepackage{subcaption}
 \usepackage[subrefformat=parens]{subcaption}
 \captionsetup{compatibility=false}
-% \captionsetup{format=hang,font=bf,width=\columnwidth}
 \captionsetup{format=plain,font=bf}
 \captionsetup[table]{position=top}
 \captionsetup[subtable]{textfont=sf}
 \captionsetup[subfigure]{labelformat=simple}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
-% フォントサイズを小さく
-\captionsetup{font=small}
+\captionsetup{font=small} % キャプションのフォントサイズを小さく
 % \captionsetup{font=footnotesize} %さらに小さくする
 
 \renewcommand{\fnum@figure}{{ Fig. }\thefigure}
